@@ -6,7 +6,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      name: "Juan"
+      name: "Juan",
+      company: "ZTM"
     }
   }
   render() {
@@ -14,8 +15,12 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>Hi {this.state.name}</p>
-          <button onClick={() => this.setState({ name: "Ignacio" })}>
+          <p>Hi {this.state.name}, I work at Globant</p>
+          <button
+            onClick={() =>
+              this.setState({name: "Ignacio"}, ()=>console.log(this.state))
+            }
+          >
             Change name
           </button>
         </header>
